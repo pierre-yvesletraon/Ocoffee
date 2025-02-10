@@ -1,0 +1,28 @@
+{
+  "name": "s09-ocoffee-pierre-yvesletraon",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "## Information du projet",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-Sushi/S09-ocoffee-pierre-yvesletraon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-clock-Sushi/S09-ocoffee-pierre-yvesletraon/issues"
+  },
+  "homepage": "https://github.com/O-clock-Sushi/S09-ocoffee-pierre-yvesletraon#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
