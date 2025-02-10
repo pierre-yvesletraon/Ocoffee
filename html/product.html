@@ -1,10 +1,91 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O'Coffee</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img
+              src="/assets/logo.svg"
+              alt="Logo oCoffee"
+              height="30"
+              class="d-inline-block align-text-top"
+            />
+            oCoffee
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/html/index.html"
+                  >Accueil</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/html/catalog.html">Catalogue</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Boutique</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container mt-5">
+      <img
+        src="/assets/coffees/100955890.png"
+        alt="Espresso"
+        class="img-fluid rounded mx-auto d-block"
+        style="max-width: 80%"
+      />
+
+      <div class="mt-4 text-left">
+        <div class="card h-100">
+          <div class="card-body d-flex flex-column">
+            <h2>Espresso</h2>
+            <p class="text-muted">Publié le 21/02/2025</p>
+            <p>
+              Ce café offre une expérience gustative unique avec des arômes délicats
+              et une acidité équilibrée. Parfait pour les amateurs de café fin.
+            </p>
+            <div class="text-left mt-4">
+              <a href="catalogue.html" class="btn btn-primary">Catalogue</a>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="text-center mt-5">
+      <p>© 2025 oCoffee</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

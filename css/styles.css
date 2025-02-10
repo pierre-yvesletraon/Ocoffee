@@ -45,9 +45,18 @@ h3 {
 }
 
 .jumbotron {
-  padding: 2rem 1rem;
+  position: relative;
   background-color: #e9d8a6;
   color: #543d30;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.jumbotron-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.25rem;
 }
 
 .card {
@@ -60,7 +69,7 @@ h3 {
 .card-img-top {
   border-radius: 0.25rem;
   object-fit: cover;
-  height: 200px;
+  height: 50%;
 }
 
 .btn-primary,
@@ -83,6 +92,13 @@ footer {
   color: #543d30;
 }
 
+/* Media query pour les écrans de taille moyenne (tablettes) */
+@media (min-width: 768px) {
+  .jumbotron-image {
+    height: 300px;
+  }
+}
+
 /* Media query pour écrans plus grands (ordinateurs) */
 @media (min-width: 992px) {
   .text-lg-start {
@@ -94,11 +110,14 @@ footer {
   .text-lg-center {
     text-align: center !important;
   }
+  .jumbotron-image {
+    height: 400px;
+  }
 }
 
 /* Media query pour écrans encore plus grands */
 @media (min-width: 1200px) {
-  .card-img-top {
-    height: 250px;
+  .jumbotron-image {
+    height: 500px;
   }
 }
