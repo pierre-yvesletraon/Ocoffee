@@ -136,6 +136,24 @@ h3 {
   border-color: #a06020;
 }
 
+.col-md-6 img {
+  border-radius: 0.25rem;
+}
+
+.col-md-6 h2 {
+  margin-bottom: 1rem;
+}
+
+.product-image {
+  max-height: 60vh;
+  width: auto;
+  max-width: 100%;
+}
+
+.product-info {
+  margin-left: 10%;
+}
+
 footer {
   background-color: #c08040;
   padding: 1rem 0;
