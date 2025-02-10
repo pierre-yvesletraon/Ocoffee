@@ -161,6 +161,13 @@ footer {
   color: #543d30;
 }
 
+.error-404 {
+  background-image: url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExODB3eDhqNDNoZzU2Y2JpOGx2YnZ1MG9sdTk3MmlzZHNtczU2cWx2dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7btW7VDxqrhJEnqE/giphy.gif");
+  background-size: auto;
+  background-position: center;
+  background-repeat: repeat;
+}
+
 /* Media query pour les écrans de taille moyenne (tablettes) */
 @media (min-width: 768px) {
   .jumbotron-image {
