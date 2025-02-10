@@ -57,27 +57,33 @@
     </header>
 
     <main class="container mt-5">
-      <div class="jumbotron text-center">
-        <img
-          src="/assets/about.jpg"
-          alt="Image de fond café"
-          class="img-fluid rounded mx-auto d-block jumbotron-image"
-        />
-        <h1 class="display-4">Notre catalogue</h1>
-        <p class="lead">Découvrez nos cafés de qualité.</p>
+      <div class="jumbotron text-center position-relative">
+        <div class="jumbotron-image-wrapper">
+          <img
+            src="/assets/about.jpg"
+            alt="Image de fond café"
+            class="img-fluid rounded mx-auto d-block jumbotron-image"
+          />
+        </div>
+        <div class="jumbotron-text">
+          <h1 class="display-4">Notre catalogue</h1>
+          <p class="lead">Découvrez nos cafés de qualité.</p>
+        </div>
       </div>
 
-      <div class="mb-3">
-        <label for="categorySelect" class="form-label">Catégorie</label>
-        <select class="form-select" id="categorySelect">
-          <option selected>Toutes les catégories</option>
-          <option value="1">Corsé</option>
-          <option value="2">Acide</option>
-          <option value="3">Fuité</option>
-          <option value="4">Doux</option>
-          <option value="5">Epicé</option>
-          <option value="6">Chocolaté</option>
-        </select>
+      <div class="d-flex justify-content-end mb-3">
+        <div style="width: 200px">
+          <label for="categorySelect" class="form-label"></label>
+          <select class="form-select" id="categorySelect">
+            <option selected>Catégorie</option>
+            <option value="1">Corsé</option>
+            <option value="2">Acide</option>
+            <option value="3">Fuité</option>
+            <option value="4">Doux</option>
+            <option value="5">Epicé</option>
+            <option value="6">Chocolaté</option>
+          </select>
+        </div>
       </div>
 
       <section class="mt-5">
@@ -91,7 +97,7 @@
               />
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Espresso</h5>
-                <p class="card-text">Espresso</p>
+                <p class="card-text"></p>
                 <a href="/html/product.html" class="btn btn-secondary mt-auto"
                   >Découvrir</a
                 >
@@ -108,7 +114,7 @@
               />
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Columbian</h5>
-                <p class="card-text">Columbian</p>
+                <p class="card-text"></p>
                 <a href="/html/product.html" class="btn btn-secondary mt-auto"
                   >Découvrir</a
                 >
@@ -125,7 +131,7 @@
               />
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Ethiopian Yirgacheffe</h5>
-                <p class="card-text">Ethiopian Yirgacheffe</p>
+                <p class="card-text"></p>
                 <a href="/html/product.html" class="btn btn-secondary mt-auto"
                   >Découvrir</a
                 >
@@ -134,6 +140,9 @@
           </div>
         </div>
       </section>
+      <div class="d-flex justify-content-start mb-3">
+        <a href="#" class="btn btn-secondary">Voir tout</a>
+      </div>
     </main>
 
     <footer class="text-center mt-5">
