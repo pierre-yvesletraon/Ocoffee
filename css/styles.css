@@ -1,0 +1,41 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
+}
+
+h1,
+h2 {
+  color: #343a40;
+}
+
+.jumbotron {
+  padding: 2rem 1rem;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+}
+
+.card-img-top {
+  border-radius: 0.25rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  color: white;
+  background-color: #c08040;
+  border-color: #c08040;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  background-color: #a06020;
+  border-color: #a06020;
+}
+
+footer {
+  background-color: #fff;
+  padding: 1rem 0;
+  border-top: 1px solid #dee2e6;
+}
