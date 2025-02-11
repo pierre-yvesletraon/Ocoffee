@@ -3,7 +3,7 @@ import dataMapper from "../dataMapper.js";
 const mainController = {
   async renderHomePage(req, res) {
     try {
-      const coffees  = await dataMapper.getThreeCoffeesForHomePage();
+      const coffees  = await dataMapper.getThreeCoffees();
       res.render("index", { coffees });
 
     } catch (error) {
@@ -14,8 +14,19 @@ const mainController = {
 
   async renderCatalogPage(req, res) {
     try {
-      const coffees  = await dataMapper.getAllCoffees();
+      const coffees  = await dataMapper.getThreeCoffees();
       res.render("catalog", { coffees });
+
+    } catch (error) {
+      console.error(error);
+      res.status(500).render("500");
+    }
+  },
+
+  async renderAllProductsPage(req, res) {
+    try {
+      const coffees  = await dataMapper.getAllCoffees();
+      res.render("allProducts", { coffees });
 
     } catch (error) {
       console.error(error);
