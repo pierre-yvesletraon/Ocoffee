@@ -11,14 +11,34 @@ const mainController = {
       res.status(500).render("500");
     }
   },
-};
 
-export const renderCatalogPage = (req, res) => {
-  res.render("catalog");
-};
+  async renderCatalogPage(req, res) {
+    try {
+      const coffees  = await dataMapper.getAllCoffees();
+      res.render("catalog", { coffees });
 
-export const renderProductPage = (req, res) => {
-  res.render("product");
+    } catch (error) {
+      console.error(error);
+      res.status(500).render("500");
+    }
+  },
+
+  async renderProductPage(req, res) {
+    try {
+      const id = req.params.id;
+      const coffee  = await dataMapper.getOneCoffee(id);
+
+      if (! coffee) {
+        res.status(404).render("404");
+        return;
+      }
+      res.render("product", { coffee });
+
+    } catch (error) {
+      console.error(error);
+      res.status(500).render("500");
+    }
+  },
 };
 
 export default mainController;

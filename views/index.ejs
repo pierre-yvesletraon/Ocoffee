@@ -47,14 +47,14 @@
             <div class="col-md-4 mb-4">
               <div class="card h-100">
                 <img
-                  src="assets/coffees/<%= parseInt(coffee.reference) %>.png"
+                  src="/assets/coffees/<%= parseInt(coffee.reference) %>.png"
                   class="card-img-top"
-                  alt="Café <%= coffee.id %>"
+                  alt="Image <%= coffee.name %>"
                 />
                 <div class="card-body d-flex flex-column">
                   <h5 class="card-title"><%= coffee.name %></h5>
                   <p class="card-text"><%= coffee.description %></p>
-                  <a href="./product" class="btn btn-secondary mt-auto"
+                  <a href="./product/<%= coffee.id %>" class="btn btn-secondary mt-auto"
                     >Découvrir</a
                   >
                 </div>
