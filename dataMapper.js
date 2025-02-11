@@ -18,6 +18,12 @@ const dataMapper = {
     const coffee = results.rows[0];
     return coffee;
   },
+
+  async searchByCategory(category) {
+    const results = await client.query(`SELECT * FROM "coffees" WHERE "category" = $1`, [category]);
+    const coffees = results.rows;
+    return coffees;
+  },
 };
 
 export default dataMapper;

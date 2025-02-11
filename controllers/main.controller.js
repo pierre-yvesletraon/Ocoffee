@@ -27,13 +27,19 @@ const mainController = {
     try {
       const id = req.params.id;
       const coffee  = await dataMapper.getOneCoffee(id);
-
-      if (! coffee) {
-        res.status(404).render("404");
-        return;
-      }
       res.render("product", { coffee });
 
+    } catch (error) {
+      console.error(error);
+      res.status(500).render("500");
+    }
+  },
+
+  async searchByCategory(req, res) { 
+    try {
+      const category = req.query.category;
+      const foundCoffees = await dataMapper.searchByCategory(category);
+      res.render('catalog', { coffees: foundCoffees });
     } catch (error) {
       console.error(error);
       res.status(500).render("500");
