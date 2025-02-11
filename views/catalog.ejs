@@ -4,7 +4,7 @@
       <div class="jumbotron text-center position-relative">
         <div class="jumbotron-image-wrapper">
           <img
-            src="assets/about.jpg"
+            src="/assets/about.jpg"
             alt="Image de fond café"
             class="img-fluid rounded mx-auto d-block jumbotron-image"
           />
@@ -17,16 +17,18 @@
 
       <div class="d-flex justify-content-end mb-3">
         <div style="width: 200px">
-          <label for="categorySelect" class="form-label"></label>
-          <select class="form-select" id="categorySelect">
-            <option selected>Catégorie</option>
-            <option value="1">Corsé</option>
-            <option value="2">Acide</option>
-            <option value="3">Fuité</option>
-            <option value="4">Doux</option>
-            <option value="5">Epicé</option>
-            <option value="6">Chocolaté</option>
-          </select>
+          <form action="/catalog/search" method="get">
+            <label for="categorySelect" class="form-label"></label> 
+            <select name="category" class="form-select" id="categorySelect" onchange="this.form.submit()">
+              <option value="">Toutes les catégories</option>
+              <option value="Corsé">Corsé</option>
+              <option value="Acide">Acide</option>
+              <option value="Fruité">Fruité</option>
+              <option value="Doux">Doux</option>
+              <option value="Épicé">Épicé</option>
+              <option value="Chocolaté">Chocolaté</option>
+            </select>
+          </form>
         </div>
       </div>
 
