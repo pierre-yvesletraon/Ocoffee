@@ -43,58 +43,23 @@
       <section class="mt-5">
         <h2>Nouveautés</h2>
         <div class="row">
-          <div class="col-md-4 mb-4">
-            <div class="card h-100">
-              <img
-                src="assets/coffees/100955890.png"
-                class="card-img-top"
-                alt="Café 1"
-              />
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Espresso</h5>
-                <p class="card-text"></p>
-                <a href="./product" class="btn btn-secondary mt-auto"
-                  >Découvrir</a
-                >
+          <% coffees.forEach(coffee => { %>
+            <div class="col-md-4 mb-4">
+              <div class="card h-100">
+                <img
+                  src="assets/coffees/<%= parseInt(coffee.reference) %>.png"
+                  class="card-img-top"
+                  alt="Café <%= coffee.id %>"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title"><%= coffee.name %></h5>
+                  <p class="card-text"><%= coffee.description %></p>
+                  <a href="./product" class="btn btn-secondary mt-auto"
+                    >Découvrir</a
+                  >
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <div class="card h-100">
-              <img
-                src="assets/coffees/100955894.png"
-                class="card-img-top"
-                alt="Café 2"
-              />
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Columbian</h5>
-                <p class="card-text"></p>
-                <a href="./product" class="btn btn-secondary mt-auto"
-                  >Découvrir</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <div class="card h-100">
-              <img
-                src="assets/coffees/105589090.png"
-                class="card-img-top"
-                alt="Café 3"
-              />
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Ethiopian Yirgacheffe</h5>
-                <p class="card-text"></p>
-                <a href="./product" class="btn btn-secondary mt-auto"
-                  >Découvrir</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+          <% }) %>
 
     <%- include('./partials/footer') %>

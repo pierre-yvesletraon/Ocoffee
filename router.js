@@ -1,9 +1,10 @@
 import { Router } from "express";
-import { renderHomePage, renderCatalogPage, renderProductPage } from "./controllers/main.controller.js";
+import { renderCatalogPage, renderProductPage } from "./controllers/main.controller.js";
+import mainController from "./controllers/main.controller.js";
 
 const router = Router();
 
-router.get("/", renderHomePage);
+router.get("/", mainController.renderHomePage);
 router.get("/catalog", renderCatalogPage);
 router.get("/product", renderProductPage);
 
