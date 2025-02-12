@@ -1,20 +1,31 @@
 <%- include('./partials/header') %>
 
-    <main class="container mt-5">
-      <section class="text-center text-lg-start">
-        <div class="row">
-          <div class="col-lg-6 mb-4 mb-lg-0">
-            <form action="/stats" enctype="multipart/form-data" method="post">
-              <div class="form-group">
-                <input type="file" class="form-control-file" name="uploaded_file">
-                <input type="text" class="form-control" placeholder="Uploader un fichier" name="nspeakers">
-                <input type="submit" value="Go!" class="btn btn-default">            
-              </div>
-            </form>
+<main class="container mt-5">
+  <section class="text-center text-lg-start">
+    <div class="row">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h2>Uploader un fichier</h2>
+        
+        <% if (typeof message !== 'undefined') { %>
+          <div class="alert alert-success">
+            <%= message %>
           </div>
-        </div>
-      </section>
-    </main>
+        <% } %>
 
+        <form action="/sendFiles" enctype="multipart/form-data" method="post">
+          <div class="form-group">
+            <label for="uploaded_file">Choisissez une image :</label>
+            <input type="file" class="form-control-file" name="uploaded_file" required>
 
-    <%- include('./partials/footer') %>
+            <label for="coffeename">Texte associé :</label>
+            <input type="text" class="form-control" placeholder="Entrez un texte" name="coffeename" required>
+
+            <input type="submit" value="Envoyer" class="btn btn-primary mt-3">            
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('./partials/footer') %>

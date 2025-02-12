@@ -1,4 +1,6 @@
 import dataMapper from "../dataMapper.js";
+import fs from 'fs';
+import path from 'path';
 
 const mainController = {
   async renderHomePage(req, res) {
@@ -69,6 +71,30 @@ const mainController = {
   async renderSendFilesPage(req, res) { 
     try {
       res.render('sendFiles');
+    } catch (error) {
+      console.error(error);
+      res.status(500).render("500");
+    }
+  },
+
+  async handleFileUpload(req, res) {
+    try {
+      const uploadedFile = req.file;
+      const textData = req.body.coffeename;
+  
+      console.log("Fichier uploadé :", uploadedFile);
+      console.log("Texte envoyé :", textData);
+      res.render('sendFiles', { message: 'Fichier et texte envoyés avec succès !' });
+    } catch (error) {
+      console.error(error);
+      res.status(500).render("500");
+    }
+  },
+
+  async renderUploadedFiles(req, res) {
+    try {
+      const files = fs.readdirSync(path.join(process.cwd(), 'uploads'));
+      res.render('uploadedFiles', { files });
     } catch (error) {
       console.error(error);
       res.status(500).render("500");
