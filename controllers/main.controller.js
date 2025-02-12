@@ -65,6 +65,15 @@ const mainController = {
       res.status(500).render("500");
     }
   },
+
+  async renderSendFilesPage(req, res) { 
+    try {
+      res.render('sendFiles');
+    } catch (error) {
+      console.error(error);
+      res.status(500).render("500");
+    }
+  },
 };
 
 export default mainController;

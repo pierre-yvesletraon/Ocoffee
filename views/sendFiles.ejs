@@ -1,0 +1,20 @@
+<%- include('./partials/header') %>
+
+    <main class="container mt-5">
+      <section class="text-center text-lg-start">
+        <div class="row">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <form action="/stats" enctype="multipart/form-data" method="post">
+              <div class="form-group">
+                <input type="file" class="form-control-file" name="uploaded_file">
+                <input type="text" class="form-control" placeholder="Uploader un fichier" name="nspeakers">
+                <input type="submit" value="Go!" class="btn btn-default">            
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <%- include('./partials/footer') %>

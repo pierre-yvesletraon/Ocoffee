@@ -10,6 +10,7 @@ router.get("/product/:id", mainController.renderProductPage);
 router.get("/catalog/search", mainController.searchByCategory);
 router.get("/allProducts", mainController.renderAllProductsPage);
 router.get("/shop", mainController.renderShopPage);
+router.get("/sendFiles", mainController.renderSendFilesPage);
 
 router.use((req, res) => {
   res.status(404).render("404");
