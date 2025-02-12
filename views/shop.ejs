@@ -60,9 +60,25 @@
       </nav>
     </header>
 
+    <section class="mt-5">
+      <div class="row">
+    <div class="col-md-2 mb-2" style="margin-left: 12.5%">
+      <div class="card h-100">
+        <div class="card-body d-flex flex-column" style="margin-left: 12.5%">
+          <h5 class="card-title">Notre boutique :</h5>
+          <p class="card-text">37 avenue du Café<br>
+          94000 Hauts-de-Cloques</p>
+        </div>
+      </div>
+    </div>
+
     <div class="map-container" style="display: flex; justify-content: center; align-items: center">
       <div id="map" style="height: 400px; width: 400px"></div>
     </div>
+
+    </div>
+  </section>
+  </main>
 
     <footer class="text-center mt-5">
       <p>© 2025 oCoffee</p>
@@ -75,7 +91,7 @@
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(map);
-      const marker = L.marker([51.505, -0.09]).addTo(map);
+      const marker = L.marker([48.839625, 2.50125]).addTo(map);
       </script>
     </body>
     </html>
