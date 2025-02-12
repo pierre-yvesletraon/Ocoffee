@@ -13,5 +13,5 @@ app.use(router);
 
 const port = 3000;
 app.listen(port, () => {
-    console.log(`Le serveur est en cours d'exécution : http://localhost:${port}`);
+  console.log(`Le serveur est en cours d'exécution : http://localhost:${port}`);
 });
