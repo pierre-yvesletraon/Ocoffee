@@ -27,6 +27,9 @@ router.get("/sendFiles", mainController.renderSendFilesPage);
 router.post("/sendFiles", upload.single('uploaded_file'), mainController.handleFileUpload);
 router.get('/uploadedFiles', mainController.renderUploadedFiles);
 
+router.post('/send-email', mainController.sendEmail);
+
+router.get("/form", mainController.renderFormPage);
 router.use((req, res) => {
   res.status(404).render("404");
 });

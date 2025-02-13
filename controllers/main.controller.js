@@ -1,6 +1,7 @@
 import dataMapper from "../dataMapper.js";
 import fs from 'fs';
 import path from 'path';
+import emailjs from '@emailjs/nodejs';
 
 const mainController = {
   async renderHomePage(req, res) {
@@ -100,6 +101,39 @@ const mainController = {
       res.status(500).render("500");
     }
   },
+
+  async renderFormPage(req, res) { 
+    try {
+      res.render('form');
+    } catch (error) {
+      console.error(error);
+      res.status(500).render("500");
+    }
+  },
+
+  async sendEmail(req, res) {
+    try {
+      const { user_name, user_email, message } = req.body;
+      const templateParams = {
+        user_name: user_name,
+        user_email: user_email,
+        message: message,
+      };
+      await emailjs.send(
+        'service_cx33b3d',
+        'template_riowp6o',
+        templateParams,
+        {
+          publicKey: '6PRXxuDxArwr13CwB',
+          privateKey: 'bkasviOePZLo72sQvrhX2',
+        }
+      );
+      res.status(200).render('form', { message: 'Message envoyé avec succès !' });
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi des emails :', error);
+      res.status(500).send('Erreur lors de l\'envoi des emails.');
+    }
+  }
 };
 
 export default mainController;
