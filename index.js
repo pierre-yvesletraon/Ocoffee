@@ -8,10 +8,6 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use((req, res, next) => {
-  res.setHeader("Content-Type", "text/html; charset=utf-8");
-  next();
-});
 app.set("view engine", "ejs");
 app.set("views", path.join(process.cwd(), "views"));
 app.use(express.static(path.join(process.cwd(), "public")));
