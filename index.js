@@ -2,9 +2,11 @@ import dotenv from "dotenv";
 import path from "path";
 import express from "express";
 import router from "./router.js";
+import pool from "./database.js";
 
 dotenv.config();
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 app.set("views", path.join(process.cwd(), "views"));
@@ -25,7 +27,6 @@ app.get("/", async (req, res) => {
 
 app.use(router);
 
-const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Le serveur est en cours d'exécution : http://localhost:${port}`);
 });
