@@ -1,7 +1,21 @@
-import pg from 'pg';
+import pkg from "pg";
+const { Pool } = pkg;
 
-const client = new pg.Client(process.env.PG_URL);
+// Vérifiez si vous êtes en production ou en développement
+const isProduction = process.env.NODE_ENV === "production";
 
-await client.connect();
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: isProduction
+    ? { rejectUnauthorized: false } // Activer SSL en production (Render)
+    : false, // Désactiver SSL en local
+});
 
-export default client;
+pool
+  .connect()
+  .then(() => console.log("Connecté à la base de données PostgreSQL"))
+  .catch((err) =>
+    console.error("Erreur lors de la connexion à PostgreSQL :", err)
+  );
+
+export default pool;
