@@ -2,12 +2,12 @@ DROP TABLE IF EXISTS "coffees";
 
 CREATE TABLE "coffees"(
   "id" SERIAL PRIMARY KEY,
-  "name" VARCHAR(64) NOT NULL,
-  "description" TEXT,
+  "name" VARCHAR(64) COLLATE "fr-FR-x-icu" NOT NULL,
+  "description" TEXT COLLATE "fr-FR-x-icu",
   "reference" VARCHAR(64) NOT NULL,
-  "origin" VARCHAR(64) NOT NULL,
+  "origin" VARCHAR(64) COLLATE "fr-FR-x-icu" NOT NULL,
   "price" NUMERIC(10,2) NOT NULL,
-  "category" VARCHAR(64) NOT NULL,
+  "category" VARCHAR(64) COLLATE "fr-FR-x-icu" NOT NULL,
   "availability" BOOLEAN DEFAULT true
 );
 
