@@ -2,7 +2,17 @@
   "name": "s09-ocoffee-pierre-yvesletraon",
   "version": "1.0.0",
   "type": "module",
-  "description": "## Information du projet",
+  "description": "[Le projet](./docs/demande-client/)",
+  "homepage": "https://github.com/pierre-yvesletraon/Ocoffee#readme",
+  "bugs": {
+    "url": "https://github.com/pierre-yvesletraon/Ocoffee/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pierre-yvesletraon/Ocoffee.git"
+  },
+  "license": "ISC",
+  "author": "",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -11,16 +21,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/O-clock-Sushi/S09-ocoffee-pierre-yvesletraon.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/O-clock-Sushi/S09-ocoffee-pierre-yvesletraon/issues"
-  },
-  "homepage": "https://github.com/O-clock-Sushi/S09-ocoffee-pierre-yvesletraon#readme",
   "dependencies": {
     "@emailjs/nodejs": "^5.0.2",
     "dotenv": "^16.4.7",
@@ -28,9 +28,9 @@
     "express": "^4.21.2",
     "multer": "^1.4.5-lts.1",
     "pg": "^8.13.3",
-    "psql": "^0.0.1"
+    "pg-pool": "^3.7.1"
   },
   "devDependencies": {
-    "eslint": "^9.20.0"
+    "eslint": "^9.22.0"
   }
 }

@@ -5,6 +5,12 @@ import router from "./router.js";
 import pool from "./database.js";
 
 dotenv.config();
+console.log("Environment Variables Loaded:");
+console.log(`DATABASE_URL: ${process.env.DATABASE_URL}`);
+console.log(`PORT: ${process.env.PORT}`);
+console.log(`SESSION_SECRET: ${process.env.SESSION_SECRET}`);
+console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
+
 const app = express();
 const port = process.env.PORT || 3000;
 
