@@ -1,11 +1,11 @@
 <%- include('./partials/header') %>
 
 <main class="container mt-5">
-  <h2>Fichiers Uploadés</h2>
-  
+  <h2>Nouveaux produits ajoutés</h2>
+
   <ul>
     <% files.forEach(file => { %>
-      <li><a href="/uploads/<%= file %>" target="_blank"><%= file %></a></li>
+    <li><a href="/uploads/<%= file %>" target="_blank"><%= file %></a></li>
     <% }) %>
   </ul>
 </main>

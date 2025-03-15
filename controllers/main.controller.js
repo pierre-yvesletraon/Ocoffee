@@ -1,14 +1,13 @@
 import dataMapper from "../dataMapper.js";
-import fs from 'fs';
-import path from 'path';
-import emailjs from '@emailjs/nodejs';
+import fs from "fs";
+import path from "path";
+import emailjs from "@emailjs/nodejs";
 
 const mainController = {
   async renderHomePage(req, res) {
     try {
-      const coffees  = await dataMapper.getThreeCoffees();
+      const coffees = await dataMapper.getThreeCoffees();
       res.render("index", { coffees });
-
     } catch (error) {
       console.error(error);
       res.status(500).render("500");
@@ -17,20 +16,8 @@ const mainController = {
 
   async renderCatalogPage(req, res) {
     try {
-      const coffees  = await dataMapper.getThreeCoffees();
-      res.render("catalog", { coffees });
-
-    } catch (error) {
-      console.error(error);
-      res.status(500).render("500");
-    }
-  },
-
-  async renderAllProductsPage(req, res) {
-    try {
-      const coffees  = await dataMapper.getAllCoffees();
-      res.render("allProducts", { coffees });
-
+      const coffees = await dataMapper.getAllCoffees();
+      res.render("catalog", { coffees, isFiltered: false });
     } catch (error) {
       console.error(error);
       res.status(500).render("500");
@@ -40,38 +27,37 @@ const mainController = {
   async renderProductPage(req, res) {
     try {
       const id = req.params.id;
-      const coffee  = await dataMapper.getOneCoffee(id);
+      const coffee = await dataMapper.getOneCoffee(id);
       res.render("product", { coffee });
-
     } catch (error) {
       console.error(error);
       res.status(500).render("500");
     }
   },
 
-  async searchByCategory(req, res) { 
+  async searchByCategory(req, res) {
     try {
       const category = req.query.category;
       const foundCoffees = await dataMapper.searchByCategory(category);
-      res.render('catalog', { coffees: foundCoffees });
+      res.render("catalog", { coffees: foundCoffees, isFiltered: true });
     } catch (error) {
       console.error(error);
       res.status(500).render("500");
     }
   },
 
-  async renderShopPage(req, res) { 
+  async renderShopPage(req, res) {
     try {
-      res.render('shop');
+      res.render("shop");
     } catch (error) {
       console.error(error);
       res.status(500).render("500");
     }
   },
 
-  async renderSendFilesPage(req, res) { 
+  async renderSendFilesPage(req, res) {
     try {
-      res.render('sendFiles');
+      res.render("sendFiles");
     } catch (error) {
       console.error(error);
       res.status(500).render("500");
@@ -82,10 +68,12 @@ const mainController = {
     try {
       const uploadedFile = req.file;
       const textData = req.body.coffeename;
-  
+
       console.log("Fichier uploadé :", uploadedFile);
       console.log("Texte envoyé :", textData);
-      res.render('sendFiles', { message: 'Fichier et texte envoyés avec succès !' });
+      res.render("sendFiles", {
+        message: "Fichier et texte envoyés avec succès !",
+      });
     } catch (error) {
       console.error(error);
       res.status(500).render("500");
@@ -94,17 +82,17 @@ const mainController = {
 
   async renderUploadedFiles(req, res) {
     try {
-      const files = fs.readdirSync(path.join(process.cwd(), 'uploads'));
-      res.render('uploadedFiles', { files });
+      const files = fs.readdirSync(path.join(process.cwd(), "uploads"));
+      res.render("uploadedFiles", { files });
     } catch (error) {
       console.error(error);
       res.status(500).render("500");
     }
   },
 
-  async renderFormPage(req, res) { 
+  async renderFormPage(req, res) {
     try {
-      res.render('form');
+      res.render("form");
     } catch (error) {
       console.error(error);
       res.status(500).render("500");
@@ -120,20 +108,22 @@ const mainController = {
         message: message,
       };
       await emailjs.send(
-        'service_cx33b3d',
-        'template_riowp6o',
+        "service_cx33b3d",
+        "template_riowp6o",
         templateParams,
         {
-          publicKey: '6PRXxuDxArwr13CwB',
-          privateKey: 'bkasviOePZLo72sQvrhX2',
+          publicKey: "6PRXxuDxArwr13CwB",
+          privateKey: "bkasviOePZLo72sQvrhX2",
         }
       );
-      res.status(200).render('form', { message: 'Message envoyé avec succès !' });
+      res
+        .status(200)
+        .render("form", { message: "Message envoyé avec succès !" });
     } catch (error) {
-      console.error('Erreur lors de l\'envoi des emails :', error);
-      res.status(500).send('Erreur lors de l\'envoi des emails.');
+      console.error("Erreur lors de l'envoi des emails :", error);
+      res.status(500).send("Erreur lors de l'envoi des emails.");
     }
-  }
+  },
 };
 
 export default mainController;
