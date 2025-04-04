@@ -73,8 +73,8 @@ La base de données PostgreSQL contient une table principale `coffees` avec les 
 
 ## Auteur
 
-[Votre nom]
+Pierre-Yves Le Traon
 
 ## Licence
 
-ISC
+[MIT](https://opensource.org/licenses/MIT)
